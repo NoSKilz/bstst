@@ -1,0 +1,140 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 18.9.2017, 18:27:38
+    Author     : NoSkilz
+*/
+@import 'result.less';
+#content
+{
+    #main
+    {
+        #product
+        {
+            #empty
+            {
+                padding: 5px;
+                border: 1px solid @d-white;
+                text-align: center;
+                background-color: @black;
+                color: @white;
+            }
+            #cart-container
+            {
+                padding: 5px;
+                padding-bottom: 20px;
+                border: 1px solid @d-white;
+                background-color: @black;
+                color: @white;
+                .flex();
+                .flex_wrap;
+                .justify();
+                #table-container
+                {
+                    width: 100%;
+                    table
+                    {
+                        border-collapse: collapse;
+                        width: 100%;
+                        text-align: center;
+                        &,th,td
+                        {
+                            border: 1px solid #e5e5e5;
+                        }
+                        td,th
+                        {
+                            padding: 5px;
+                        }
+                        .cart-remove
+                        {
+                            &:hover
+                            {
+                                a
+                                {
+                                    color: #f44336 !important;
+                                }
+                            }
+                        }
+                    }
+                    #total-price
+                    {
+                        float: right;
+                    }
+                }
+                a
+                {
+                    margin-left: 10px;
+                    width: 75%;
+                    #order-continue
+                    {
+                        width: 100%;
+                        background-color: @l-black;
+                        height: 50px;
+                        .transition();
+                        font-size: 20px;
+                        color: @white;
+                        cursor: pointer;
+                        margin-top: 20px;
+                        span
+                        {
+                            cursor: pointer;
+                            display: inline-block;
+                            position: relative;
+                            transition: 0.5s;
+                            &:after
+                            {
+                                content: '\00bb';
+                                position: absolute;
+                                opacity: 0;
+                                font-size: 30px;
+                                font-weight: bold;
+                                right: -20px;
+                                top: -6px;
+                            }
+                        }
+                        &:hover
+                        {
+                            background-color: @d-white;
+                            color: @black; 
+                            span
+                            {
+                                padding-right: 25px;
+                                &:after
+                                {
+                                    opacity: 1;
+                                    right: -10px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//------------------------------------------------------------------------------
+
+@media screen and(max-width: 300px)
+{
+    #content
+    {
+        #main
+        {
+            #product
+            {
+                #cart-container
+                {
+                    a
+                    {
+                        margin-left: 0;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

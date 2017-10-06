@@ -1,0 +1,77 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 19.9.2017, 15:49:36
+    Author     : NoSkilz
+*/
+@import 'result.less';
+#content
+{
+    #main
+    {
+        #product
+        {
+            #interface-container
+            {
+                background-color: @black;
+                border: 1px solid @d-white;
+                color: @white;
+                #table-container
+                {
+                    color: @white;
+                    overflow-x: scroll;
+                    table
+                    {
+                        border-collapse: collapse;
+                        width: 100%;
+                        color: @white;
+                        text-align: center;
+                        &,th,td
+                        {
+                            border: 1px solid #e5e5e5;
+                        }
+                        td,th
+                        {
+                            padding: 5px;
+                        }
+                    }
+                }
+                #new-mail,#new-pass
+                {
+                    width: 100%;
+                    padding: 30px;
+                    .box_sizing();
+                    text-align: center;
+                    fieldset
+                    {
+                        border: 1px solid @d-white;
+                        padding: 10px;
+                    }
+                    input
+                    {
+                        width: 100%;
+                        height: 30px;
+                        margin-bottom: 20px;
+                        padding: 5px;
+                        .box_sizing();
+                        &[type="submit"]
+                        {
+                            background-color: @l-black;
+                            color: @white;
+                            margin-top: 20px;
+                            .transition();
+                            &:hover
+                            {
+                                background-color: @d-white;
+                                color: @black;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

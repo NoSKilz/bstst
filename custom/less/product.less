@@ -1,0 +1,175 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 18.9.2017, 12:39:19
+    Author     : NoSkilz
+*/
+@import 'result.less';
+#content
+{
+    #main
+    {
+        #product
+        {
+            #product-container
+            {
+                background-color: @black;
+                border: 1px solid @d-white;
+                color: @white;
+                .flex();
+                .flex_wrap();
+                #err
+                {
+                    border-top: 1px solid @d-white;
+                    width: 100%;
+                    text-align: center;
+                    padding: 5px;
+                    border-bottom: 1px solid @d-white;
+                }
+                #c-f-container
+                {
+                    border-top: 1px solid @d-white;
+                    width: 100%;
+                    padding: 5px;
+                    border-bottom: 1px solid @d-white;
+                    #comment-form
+                    {
+                        #com
+                        {
+                            resize: none;
+                            height: 50px;
+                            width: 50%
+                        }
+                        #comment-submit
+                        {
+                            height: 60px;
+                            vertical-align: top;
+                            width: 30%;
+                            background-color: @l-black;
+                            color: @white;
+                            .transition();
+                            &:hover
+                            {
+                                background-color: @d-white;
+                                color: black;
+                            }
+                        }
+                        textarea
+                        {
+                            padding: 5px;
+                        }
+                    }
+                }
+                #comment-div
+                {
+                    width: 100%;
+                    padding: 5px;
+                    p
+                    {
+                        padding: 5px;
+                    }
+                }
+                #picture-container
+                {
+                    width: 160px;
+                    border-right: 1px solid @d-white;
+                    #picture
+                    {
+                        height: 300px;
+                        width: 150px;
+                        padding: 5px;
+                        img
+                        {
+                            width: inherit;
+                            height: inherit;
+                        }
+                    }
+                }
+                #description
+                {
+                    width: 100%;
+                    padding: 5px;
+                }
+                #smt-container
+                {
+                    display: flex;
+                    width: 100%;
+                    .align_items(center);
+                    border-bottom: 1px solid @d-white;
+                    #rest-container
+                    {
+                        width: 100%;
+                        text-align: center;
+                        div
+                        {
+                            padding-top: 5px;
+                            padding-bottom: 5px;
+                        }
+                        #ca
+                        {
+                            #cart-add
+                            {
+                                input[type="submit"]
+                                {
+                                    padding: 6px 10px;
+                                    background-color: @l-black;
+                                    color: @white;
+                                    .transition();
+                                    &:hover
+                                    {
+                                        background-color: @d-white;
+                                        color: black;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//------------------------------------------------------------------------------
+
+@media screen and(max-width: 350px)
+{
+    #smt-container
+    {
+        .flex_wrap();
+    }
+    #content
+    {
+        #main
+        {
+            #product
+            {
+                #product-container
+                {
+                    #picture-container
+                    {
+                        border-right: 0 !important;
+                        border-bottom: 1px solid @d-white;
+                        width: 100% !important;
+                        #picture
+                        {
+                            margin: 0 auto;
+                        }
+                    }
+                    #c-f-container
+                    {
+                        padding: 0;
+                        border: 0;
+                    }
+                    #err,#comment-div,#comment-form,#charNum
+                    {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
