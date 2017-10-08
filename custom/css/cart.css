@@ -531,9 +531,17 @@ noscript {
   background-color: #cccccc;
   color: #000;
 }
-#reglog-modal #register #register-p,
-#reglog-modal #login #register-p,
-#reglog-modal #register #login-p,
+#reglog-modal #register #register-p {
+  padding: 5px;
+  text-align: center;
+  border-top: 1px solid #cccccc;
+  float: none;
+  margin-left: 0;
+}
+#reglog-modal #register #register-p #register-span {
+  font-weight: bold;
+  cursor: pointer;
+}
 #reglog-modal #login #login-p {
   padding: 5px;
   text-align: center;
@@ -541,13 +549,6 @@ noscript {
   float: none;
   margin-left: 0;
 }
-#reglog-modal #register #register-p #register-span,
-#reglog-modal #login #register-p #register-span,
-#reglog-modal #register #login-p #register-span,
-#reglog-modal #login #login-p #register-span,
-#reglog-modal #register #register-p #login-span,
-#reglog-modal #login #register-p #login-span,
-#reglog-modal #register #login-p #login-span,
 #reglog-modal #login #login-p #login-span {
   font-weight: bold;
   cursor: pointer;
