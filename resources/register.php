@@ -25,9 +25,9 @@ if(isset($_POST['r-submit']))
     $success=[];
     if(!isset($pass, $passcheck, $mail, $mailcheck, $name))
     {
-        array_push($errors,'Došlo k chybě, zkuste to znovu.');
+        array_push($errors,'Došlo k neznámé chybě, zkuste to později.');
     }
-    if(empty($name)&&empty($pass)&&empty($passcheck)&&empty($mail)&&empty($mailcheck))
+    if(empty($name)||empty($pass)||empty($passcheck)||empty($mail)||empty($mailcheck))
     {
         array_push($errors,'Musí být vyplněna všechna pole.');
     }

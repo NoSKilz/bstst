@@ -8,15 +8,15 @@
 if(isset($_POST['pst']))
 {
     $errors=[];
-    if(!isset($_POST['product_id']))
-    {
-        array_push($errors,'Došlo k neznámé chybě, zkuste to později.');
-    }
     $id=$_POST['product_id'];
     $s_id=strip_tags($id);
     $result=$db1::execute_query('SELECT product_name,price,in_stock FROM product WHERE product_id = :id',[':id' => $s_id]);
     $result0=$result->fetch(PDO::FETCH_ASSOC);
     $number=$result->rowCount();
+    if(!isset($id))
+    {
+        array_push($errors,'Došlo k neznámé chybě, zkuste to později.');
+    }
     if($number<=0)
     {
         array_push($errors,'Došlo k neznámé chybě, zkuste to později.');
@@ -52,7 +52,6 @@ if(isset($_POST['pst']))
     }
     else
     {
-        array_push($errors,'Došlo k neznámé chybě, zkuste to později.');
         $_SESSION['errors']=$errors;
         header('Refresh:0');
     }

@@ -17,9 +17,9 @@ if(isset($_POST['l-submit']))
     $errors=[];
     if(!isset($name,$pass))
     {
-        array_push($errors,'Došlo k chybě, zkuste to znovu.');
+        array_push($errors,'Došlo k neznámé chybě, zkuste to později.');
     }
-    if(empty($name)&&empty($pass))
+    if(empty($name)||empty($pass))
     {
         array_push($errors,'Musí být vyplněna všechna pole.');
     }

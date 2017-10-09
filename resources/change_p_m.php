@@ -19,7 +19,11 @@ if(isset($_POST['mail-submit']))
     $number=$result->rowCount();
     $result0=$db1::execute_query('SELECT password FROM user WHERE user_id=:id',[':id' => $user->getid()]);
     $result1=$result0->fetch(PDO::FETCH_ASSOC);
-    if((!isset($n_mail,$n_mail_c,$e_password))||(empty($n_mail)||empty($n_mail_c)||empty($e_password)))
+    if(!isset($n_mail,$n_mail_c,$e_password))
+    {
+        array_push($errors,'Došlo k neznámé chybě, zkuste to později.');
+    }
+    if(empty($n_mail)||empty($n_mail_c)||empty($e_password))
     {
         array_push($errors,'Musí být vyplněna všechna pole.');
     }
@@ -74,7 +78,11 @@ if(isset($_POST['pass-submit']))
     $s_o_password=strip_tags($o_password);
     $result=$db1::execute_query('SELECT password FROM user WHERE user_id=:id',[':id' => $user->getid()]);
     $result0=$result->fetch(PDO::FETCH_ASSOC);
-    if((!isset($n_pass,$n_pass_c,$o_password))||(empty($n_pass)||empty($n_pass_c)||empty($o_password)))
+    if(!isset($n_pass,$n_pass_c,$o_password))
+    {
+        array_push($errors,'Došlo k neznámé chybě, zkuste to později.');
+    }
+    if(empty($n_pass)||empty($n_pass_c)||empty($o_password))
     {
         array_push($errors,'Musí být vyplněna všechna pole.');
     }

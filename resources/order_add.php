@@ -72,7 +72,7 @@ if(isset($_POST['o-submit']))
 {
     if(!isset($_SESSION['cart']))
     {
-        array_push($errors,'Došlo k chybě, zkuste to znovu');
+        array_push($errors,'Došlo k neznámé chybě, zkuste to později.');
     }
     $f_name=$_POST['f-name'];
     $l_name=$_POST['l-name'];
@@ -94,7 +94,11 @@ if(isset($_POST['o-submit']))
     $s_delivery=strip_tags($delivery);
     $s_payment=strip_tags($payment);
     $s_info=strip_tags($info);
-    if((!isset($f_name,$l_name,$mail,$phone,$street,$city,$psc,$delivery,$payment))||(empty($f_name)||empty($l_name)||empty($mail)||empty($phone)||empty($street)||empty($city)||empty($psc)||empty($delivery)||empty($payment)))
+    if(!isset($f_name,$l_name,$mail,$phone,$street,$city,$psc,$delivery,$payment))
+    {
+        array_push($errors,'Došlo k neznámé chybě, zkuste to později.');
+    }
+    if(empty($f_name)||empty($l_name)||empty($mail)||empty($phone)||empty($street)||empty($city)||empty($psc)||empty($delivery)||empty($payment))
     {
         array_push($errors,'Musí být vyplněna všechna pole.');
     }
@@ -104,11 +108,11 @@ if(isset($_POST['o-submit']))
     }
     if($s_delivery!='Česká pošta - balík do ruky'&&$s_delivery!='Osobní odběr - Ostrava'&&$s_delivery!='Přepravní služba PPL')
     {
-        array_push($errors,'Došlo k chybě, zkuste to znovu.');
+        array_push($errors,'Došlo k neznámé chybě, zkuste to později.');
     }
     if($s_payment!='Převod předem'&&$s_payment!='Platba dobírkou(platba hotově řidiči)')
     {
-        array_push($errors,'Došlo k chybě, zkuste to znovu.');
+        array_push($errors,'Došlo k neznámé chybě, zkuste to později.');
     }
     if(empty($errors))
     {
