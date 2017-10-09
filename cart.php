@@ -5,6 +5,7 @@ include_once 'resources/functions.php';
 spl_autoload_register('loadclass');
 $db1=new database();
 $db=$db1::connect('localhost','project','root','');
+$cart=new cart();
 $user=new user();
 include_once 'resources/register.php';
 include_once 'resources/login.php';
@@ -14,22 +15,7 @@ if($_GET['action']=='logout')
 }
 if(isset($_SESSION['cart'])&&isset($_GET['delete']))
 {
-    foreach($_SESSION['cart'] as $i => $item )
-    {
-        if($_SESSION['cart'][$i]['name']==$_GET['delete'])
-        {
-            unset($_SESSION['cart'][$i]);
-        }
-    }
-    $i=0;
-    foreach($_SESSION['cart'] as $i => $item )
-    {
-        $i++;
-    }
-    if($i==0||$i==1)
-    {
-        unset($_SESSION['cart']);
-    }
+    $cart->remove();
     header('Location:cart.php');
 }
 ?>

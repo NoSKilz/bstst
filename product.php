@@ -5,6 +5,7 @@ include_once 'resources/functions.php';
 spl_autoload_register('loadclass');
 $db1=new database();
 $db=$db1::connect('localhost','project','root','');
+$cart=new cart();
 $user=new user();
 include_once 'resources/register.php';
 include_once 'resources/login.php';

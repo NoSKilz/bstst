@@ -27,27 +27,7 @@ if(isset($_POST['pst']))
     }
     if(empty($errors))
     {
-        $item['name']=$result0['product_name'];
-        $item['price']=$result0['price'];
-        $item['count']=1;
-        $_SESSION['cart'][]=$item;
-        $result1=$_SESSION['cart'];
-        $result2=[];
-        foreach($result1 as $i)
-        {
-            $total_count+=$i['count'];
-            $name=$i['name'];
-            if(isset($result2[$name]))
-            {
-                $result2[$name]['count']+=$i['count'];
-            }
-            else
-            {
-                $result2[$name]=$i;
-            }
-        }
-        $_SESSION['cart']=array_values($result2);
-        $_SESSION['number']=$total_count;
+        $cart->add($result0);
         header('Refresh:0');
     }
     else
