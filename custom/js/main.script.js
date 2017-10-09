@@ -8,24 +8,11 @@
  return document.readyState == 'complete' || document.readyState == 'ready';
 }*/
 aftload();
-var acc = document.getElementsByClassName('accordion');
+var acc=document.getElementsByClassName('accordion'),close=document.querySelectorAll('.close');;
 var i;
 for (i = 0; i < acc.length; i++) 
 {
-    acc[i].onclick = function() {
-        this.classList.toggle('active');
-        var panel = this.nextElementSibling;
-        if (panel.style.maxHeight)
-        {
-            panel.style.maxHeight = null;
-            panel.style.borderBottom=null;
-        } 
-        else 
-        {
-            panel.style.maxHeight = panel.scrollHeight + 'px';
-            panel.style.borderBottom='1px solid white';
-        } 
-    };
+    acc[i].addEventListener('click',accordion);
 }
 if(document.getElementById('register-button'))
 {
@@ -56,7 +43,6 @@ window.onclick = function(event)
         hide();
     }
 };
-var close=document.querySelectorAll('.close');
 for(i=0;i<close.length;i++)
 {
     close[i].addEventListener('click',hide);
@@ -84,6 +70,21 @@ function hide()
     document.getElementById('reglog-modal').style.display = "none";
     document.getElementById('register').style.display='none';
     document.getElementById('login').style.display='none';
+}
+function accordion()
+{
+    this.classList.toggle('active');
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight)
+    {
+        panel.style.maxHeight = null;
+        panel.style.borderBottom=null;
+    } 
+    else 
+    {
+        panel.style.maxHeight = panel.scrollHeight + 'px';
+        panel.style.borderBottom='1px solid white';
+    } 
 }
 function sleep(ms) 
 {

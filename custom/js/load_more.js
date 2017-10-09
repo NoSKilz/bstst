@@ -25,7 +25,7 @@ document.getElementById('lmbtn').addEventListener('click',function(){
             }
             else
             {
-                document.getElementById('lmbtn').innerHTML="To je vše :(";
+                document.getElementById('lmbtn').textContent="To je vše :(";
             }
         }
     };

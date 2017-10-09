@@ -31,7 +31,7 @@ and open the template in the editor.
         <link rel="author" href="https://plus.google.com/u/0/115111710746527975391">
         <link rel="publisher" href="">
         <link type="text/css" href="https://fonts.googleapis.com/css?family=Jura" rel="stylesheet">
-        <link type="text/css" href="custom/css/main.css" rel="stylesheet">
+        <link type="text/css" href="custom/css/main.min.css" rel="stylesheet">
         <link rel="icon" type="image/gif" href="favicon.ico" />
         <?php
         if($user->loggedin())
@@ -105,7 +105,7 @@ and open the template in the editor.
                     <p>© 2016 <a href="#">Radek Šimíček</a>, All Rights Reserved.</p>
             </footer>
         </div>
-        <script src="custom/js/es5.main.script.js" nonce="<?php echo $nonce;?>"></script>
+        <script src="custom/js/main.script.min.js" nonce="<?php echo $nonce;?>"></script>
         <script src="custom/js/suggestions.min.js" nonce="<?php echo $nonce;?>"></script>
         <script src="custom/js/load_more.min.js" nonce="<?php echo $nonce;?>"></script>
     </body>

@@ -99,15 +99,15 @@ body div .souhrn .eq {
 #content header #search #form-container form input {
   padding: 6px 10px;
   margin-top: 4px;
-  -webkit-transition: 0.5s !important;
-  -o-transition: 0.5s !important;
-  -moz-transition: 0.5s !important;
-  transition: 0.5s !important;
 }
 #content header #search #form-container form input[type="submit"] {
   background-color: #4d4d4d;
   color: #fff;
   width: 30%;
+  -webkit-transition: 0.5s !important;
+  -o-transition: 0.5s !important;
+  -moz-transition: 0.5s !important;
+  transition: 0.5s !important;
 }
 #content header #search #form-container form input[type="submit"]:hover {
   color: #000;
@@ -522,9 +522,17 @@ noscript {
   background-color: #cccccc;
   color: #000;
 }
-#reglog-modal #register #register-p,
-#reglog-modal #login #register-p,
-#reglog-modal #register #login-p,
+#reglog-modal #register #register-p {
+  padding: 5px;
+  text-align: center;
+  border-top: 1px solid #cccccc;
+  float: none;
+  margin-left: 0;
+}
+#reglog-modal #register #register-p #register-span {
+  font-weight: bold;
+  cursor: pointer;
+}
 #reglog-modal #login #login-p {
   padding: 5px;
   text-align: center;
@@ -532,13 +540,6 @@ noscript {
   float: none;
   margin-left: 0;
 }
-#reglog-modal #register #register-p #register-span,
-#reglog-modal #login #register-p #register-span,
-#reglog-modal #register #login-p #register-span,
-#reglog-modal #login #login-p #register-span,
-#reglog-modal #register #register-p #login-span,
-#reglog-modal #login #register-p #login-span,
-#reglog-modal #register #login-p #login-span,
 #reglog-modal #login #login-p #login-span {
   font-weight: bold;
   cursor: pointer;
@@ -684,13 +685,15 @@ noscript {
     height: 64px;
   }
   #content header #search #form-container form input[type="search"] {
-    width: 100%;
     height: 28px;
     margin-top: 0;
   }
   #content header #search #form-container form input[type="submit"] {
     width: 100%;
     height: 28px;
+  }
+  #content header #search #form-container form #suggestions-container {
+    width: 100%;
   }
   #content header #search #cart-btn {
     position: static;
