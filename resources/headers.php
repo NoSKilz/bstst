@@ -14,6 +14,7 @@ ini_set('session.hash_bits_per_character', 5);
 //ini_set('session.cookie_secure', 1); // https
 ini_set('session.entropy_length', 512);
 ini_set('session.use_trans_sid', 0);
+ini_set('expose_php', 0);
 session_name('sid');
 
 session_start();

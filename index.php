@@ -5,7 +5,7 @@ include_once 'resources/functions.php';
 spl_autoload_register('loadclass');
 $db1=new database();
 $db=$db1::connect('localhost','project','root','');
-$user=new user();
+$user=new user($db1);
 include_once 'resources/register.php';
 include_once 'resources/login.php';
 if($_GET['action']=='logout')

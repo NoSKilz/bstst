@@ -45,8 +45,7 @@ if(isset($_POST['mail-submit']))
     }
     if(empty($errors))
     {
-        $result2=$db1::execute_query('UPDATE user SET user_email=:nmail WHERE user_id=:id',[':nmail' => $s_n_mail,
-                             ':id' => $user->getid()]);
+        $result2=$user->changeMail($s_n_mail,$user->getid());
         if($result2)
         {
             array_push($success,'Váš e-mail byl úspěšně zmněněn.');
@@ -96,10 +95,7 @@ if(isset($_POST['pass-submit']))
     }
     if(empty($errors))
     {
-        $options=['cost'=>12];
-        $hash=password_hash($s_n_pass, PASSWORD_BCRYPT, $options);
-        $result1=$db1::execute_query('UPDATE user SET password=:pass WHERE user_id=:id',[':pass' => $hash,
-                                 ':id' => $user->getid()]);
+        $result1=$user->changePass($s_n_pass,$user->getid());
         if($result1)
         {
             array_push($success,'Váše heslo bylo úspěšně zmněněno.');
