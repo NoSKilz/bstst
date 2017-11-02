@@ -18,7 +18,7 @@ class cart
     {
         $result=$cart_session;
         $result0=[];
-        $total_count;
+        $total_count=0;
         foreach($result as $i)
         {
             $total_count+=$i['count'];

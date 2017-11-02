@@ -17,12 +17,11 @@ if(isset($_GET['genre'],$_GET['platform']))
     $number0=$result0->rowCount();
     if($number>0 && $number0>0)
     {
-        $result1=$db1::execute_query('SELECT product_id,product_name,price,platform_name FROM product WHERE(genre_name LIKE :genname AND platform_name LIKE :platname) LIMIT 30',[':genname' => $s_genre,
+        $result1=$db1::execute_fetchall('SELECT product_id,product_name,price,platform_name FROM product WHERE(genre_name LIKE :genname AND platform_name LIKE :platname) LIMIT 30',[':genname' => $s_genre,
                                 ':platname' => $s_platform]);
-        $number1=$result1->rowCount();
-        if($number1>0)
+        if($result1)
         {
-            while ($result2=$result1->fetch(PDO::FETCH_ASSOC))
+            foreach($result1 as $result2)
             {
                 echo "<a href='product.php?product={$result2['product_id']}'><div class='result-product'>
                             <p class='result-name'>{$result2['product_name']} ({$result2['platform_name']})</p>
@@ -44,11 +43,10 @@ elseif (isset($_GET['search']))
 {
     $search=$_GET['search'];
     $s_search=strip_tags($search);
-    $result=$db1::execute_query('SELECT product_id,product_name,price,platform_name FROM product WHERE product_name LIKE :search',[':search'=> "%$s_search%"]);
-    $number=$result->rowCount();
-    if($number>0)
+    $result=$db1::execute_fetchall('SELECT product_id,product_name,price,platform_name FROM product WHERE product_name LIKE :search',[':search'=> "%$s_search%"]);
+    if($result)
     {
-        while($result0=$result->fetch(PDO::FETCH_ASSOC))
+        foreach($result as $result0)
         {
             echo "<a href='product.php?product={$result0['product_id']}'><div class='result-product'>
                             <p class='result-name'>{$result0['product_name']} ({$result0['platform_name']})</p>

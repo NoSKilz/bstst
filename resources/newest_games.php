@@ -5,11 +5,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-$limit=8;
-$sql='SELECT product_id,product_name,platform_name,price,picture,description FROM product ORDER BY uploaded desc LIMIT '.$limit.' OFFSET 0'; 
-foreach ($db->query($sql) as $row)
+$result=$db1::execute_fetchall('SELECT product_id,product_name,platform_name,price,picture,description FROM product ORDER BY uploaded desc LIMIT 8 OFFSET 0'); 
+foreach($result as $row)
 {
-    $description=substr($row['description'],0,200);
+    $description=mb_strimwidth($row['description'],0,200);
     echo "<a href='product.php?product={$row['product_id']}'><div class='new-prod'>
         <div class='flip'>
           <div class='front'>

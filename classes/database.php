@@ -40,4 +40,11 @@ class database
         $query->execute($params);
         return $query;
     }
+    public static function execute_fetchall($sql, $params = []) 
+    {
+        $query = self::$connection->prepare($sql);
+        $query->execute($params);
+        $result = $query->fetchAll();
+        return $result;
+    }
 }

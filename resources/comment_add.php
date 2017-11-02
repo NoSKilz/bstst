@@ -34,7 +34,7 @@ if(isset($_POST['c-submit']))
                                   ':text' => $s_comm]);
         if($result)
         {
-            header('Refrsh:0');
+            header('Refresh:0');
         }   
         else
         {

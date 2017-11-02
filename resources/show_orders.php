@@ -7,7 +7,7 @@
  */
 if(!isset($_GET['order']))
 {
-    $result=$db1::execute_query('SELECT * from goods_order WHERE user_id=:usid',[':usid' => $user->getid()]);
+    $result=$db1::execute_fetchall('SELECT * from goods_order WHERE user_id=:usid',[':usid' => $user->getid()]);
     echo '<table>
               <tbody>
                   <tr>
@@ -51,14 +51,14 @@ if(isset($_GET['order']))
 {
     $order=$_GET['order'];
     $s_order=strip_tags($order);
-    $result=$db1::execute_query('SELECT p.product_name,o.count FROM order_content o INNER JOIN product p using(product_id) WHERE o.order_id=:id',[":id"=>$s_order]);
+    $result=$db1::execute_fetchall('SELECT p.product_name,o.count FROM order_content o INNER JOIN product p using(product_id) WHERE o.order_id=:id',[":id"=>$s_order]);
     echo '<table>
               <tbody>
                   <tr>
                       <th>Název hry</th>
                       <th>Počet kusů</th>
                   </tr>';
-    while($result1=$result->fetch(PDO::FETCH_ASSOC))
+    foreach($result as $result1)
     {
         echo "<tr>
                   <td>{$result1['product_name']}</td>

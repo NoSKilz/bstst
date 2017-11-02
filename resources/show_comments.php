@@ -19,12 +19,10 @@ else
 {
     echo '<p id="err">Pro přidávání komentářů musíte být příhlášeni.</p>';
 }
-$result=$db1::execute_query('SELECT user_id,comment_text FROM comments WHERE product_id=:id',[':id'=>$s_id]);
-echo '<div id="comment-div">';
+$result=$db1::execute_fetchall('SELECT c.user_id,c.comment_text,r.user_name FROM comments c INNER JOIN user r ON r.user_id=c.user_id WHERE c.product_id=:id ORDER BY c.uploaded',[':id'=>$s_id]);
+echo '<div id="comment-div" style="word-wrap:break-word;overflow=hidden;">';
 foreach($result as $row)
 {
-    $result=$db1::execute_query('SELECT user_name FROM user WHERE user_id= :usid',[':usid' => $row['user_id']]);
-    $com_name=$result->fetchColumn();
-    echo "<p><b style='color:red;'>$com_name: </b>{$row['comment_text']}</p>";
+    echo "<p><b style='color:red;'>{$row['user_name']}: </b>{$row['comment_text']}</p>";
 }
 echo '</div>';

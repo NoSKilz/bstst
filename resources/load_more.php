@@ -13,7 +13,7 @@
     $sql="SELECT product_id,product_name,platform_name,price,picture,description FROM product ORDER BY uploaded desc LIMIT 8 OFFSET $s_offset";
     foreach($db->query($sql) as $row)
     {
-        $description=substr($row['description'],0,200);
+        $description=mb_strimwidth($row['description'],0,200);
         $output.="<a href='product.php?product={$row['product_id']}'><div class='new-prod'>
             <div class='flip'>
               <div class='front'>
