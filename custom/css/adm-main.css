@@ -1,0 +1,146 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 6.8.2016, 23:04:58
+    Author     : NoSkilz
+*/
+*
+{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    text-decoration: none;
+    list-style-type: none;
+    color: white;
+    outline: none;
+    font-family: 'Jura', sans-serif;
+}
+select,option
+{
+    color: black;    
+}
+body
+{
+    background-color: #e5e5e5;
+}
+#all
+{
+    width: 1000px;
+    margin: 0 auto;
+}
+#scroll
+{
+    overflow-x: scroll;
+}
+#content
+{
+    min-height: 1080px;
+    background-color: #141414;
+    width: inherit;
+    margin-top: -5px;
+}
+table 
+{
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+th,td
+{
+    padding: 5px 10px 5px 10px;
+}
+table, th, td
+{
+    text-align: center;
+    border: 1px solid #e5e5e5;
+}
+#list
+{
+    position: relative;
+    background-color: #141414;
+    width: 200px;
+}
+li
+{
+    padding: 3px;
+    margin: 5px;
+    border-bottom: 1px solid #e5e5e5;
+    border-top: 1px solid #e5e5e5;
+}
+input
+{
+    color: black;
+}
+#cat-submit,#cat-m-submit,#prod-submit,#prod-m-submit
+{
+    height: 20px;
+    padding: 5px;
+    padding-bottom: 19px;
+    background-color: #7f7f7f;
+    color: white;
+}
+textarea
+{
+    color: black;
+}
+footer
+{
+    background-color: #000000;
+    text-align: center;
+}
+.eq
+{
+    display: none;
+}
+#success {
+  width: 100%;
+  background-color: #4CAF50;
+  position: relative;
+  text-align: center;
+}
+#success .closesc {
+  font-weight: bold;
+  font-size: 45px;
+  padding: 5px;
+  color: black;
+  cursor: pointer;
+  position: absolute;
+  top: -20px;
+  right: 0px;
+}
+#success p {
+  padding-top: 10px;
+}
+#success p:nth-child(2) {
+  padding-top: 23px;
+}
+#success p:last-child {
+  padding-bottom: 10px;
+}
+#errors {
+  width: 100%;
+  background-color: #f44336;
+  position: relative;
+  text-align: center;
+}
+#errors .closeerr {
+  font-weight: bold;
+  font-size: 45px;
+  padding: 5px;
+  color: black;
+  cursor: pointer;
+  position: absolute;
+  top: -20px;
+  right: 13px;
+}
+#errors p {
+  padding-top: 10px;
+}
+#errors p:nth-child(2) {
+  padding-top: 23px;
+}
+#errors p:last-child {
+  padding-bottom: 10px;
+}
