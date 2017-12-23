@@ -22,15 +22,15 @@ if(isset($adm)&& !isset($mod)&&$s_adm=="genres.php")
           </tr>';
     foreach ($genres as $genre)
     {
-    echo "<tr>
-              <td>{$genre['genre_id']}</td>
-              <td>{$genre['genre_name']}</td>
-              <td>
-                  <a href='administration.php?adm={$s_adm}&delete={$genre['genre_id']}'>Smazat</a>
-                  </br>
-                  <a href='administration.php?adm={$s_adm}&modify={$genre['genre_id']}'>Upravit</a>
-              </td>
-          </tr>";
+        echo "<tr>
+                  <td>{$genre['genre_id']}</td>
+                  <td>{$genre['genre_name']}</td>
+                  <td>
+                      <a href='administration.php?adm={$s_adm}&delete={$genre['genre_id']}'>Smazat</a>
+                      </br>
+                      <a href='administration.php?adm={$s_adm}&modify={$genre['genre_id']}'>Upravit</a>
+                  </td>
+              </tr>";
     }
     echo '</table>
           </form>';
@@ -53,15 +53,15 @@ elseif(isset($adm,$mod)&&$s_adm=="genres.php")
           </tr>';
     foreach ($genres as $genre)
     {
-    echo "<tr>
-              <td>{$genre['genre_id']}</td>
-              <td>{$genre['genre_name']}</td>
-              <td>
-                  <a href='administration.php?adm={$s_adm}&delete={$genre['genre_id']}'>Smazat</a>
-                  </br>
-                  <a href='administration.php?adm={$s_adm}&modify={$genre['genre_id']}'>Upravit</a>
-              </td>
-          </tr>";
+        echo "<tr>
+                  <td>{$genre['genre_id']}</td>
+                  <td>{$genre['genre_name']}</td>
+                  <td>
+                      <a href='administration.php?adm={$s_adm}&delete={$genre['genre_id']}'>Smazat</a>
+                      </br>
+                      <a href='administration.php?adm={$s_adm}&modify={$genre['genre_id']}'>Upravit</a>
+                  </td>
+              </tr>";
     }
     echo '</table>
           </form>';
